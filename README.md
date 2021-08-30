@@ -22,10 +22,10 @@ Para la construcción de esta App se contó con un desarrollo previo del Front-E
 * Requisitos para desplegar el proyecto de forma local
     1. Clonar el repositorio.
     2. Crear un entorno virtual en la carpeta del proyecto clonado.
-    3. Activar el entorno virtual e instalar las dependencias del proycto que e encuentran en el archivo `requirements.txt`.
+    3. Activar el entorno virtual e instalar las dependencias del proyecto que se encuentran en el archivo `requirements.txt`.
     4. Renombrar el archivo `.env.example` por `.env`.
     5. Generar un SECRET_KEY.
-    6. Aagregue su usuario y contraseña de postgres en *USER_DATABASE* y *PASSWORD_DATABASE* del archivo `.env`.
+    6. Agregue su usuario y contraseña de postgres en *USER_DATABASE* y *PASSWORD_DATABASE* del archivo `.env`.
     7. Ejecutar migraciones de la base de datos.
     8. Crear un super usuario en `Django`.
     9. Ejecutar el servidor.
