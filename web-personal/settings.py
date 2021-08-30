@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from typing import cast
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9a1a$tk&$n9zvn86a$13j$=^_fvpdxoc+lid21vm*9lj*g7e*8'
+SECRET_KEY = config('SECRET_KEY', cast = str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default = False, cast = bool)
 
 ALLOWED_HOSTS = []
 
@@ -80,11 +81,11 @@ WSGI_APPLICATION = 'web-personal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DATABASE'),
-        'USER': config('USER_DATABASE'),
-        'PASSWORD': config('PASSWORD_DATABASE'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT_DATABASE')
+        'NAME': config('DATABASE', cast = str),
+        'USER': config('USER_DATABASE', cast = str),
+        'PASSWORD': config('PASSWORD_DATABASE', cast = str),
+        'HOST': config('HOST', cast = str),
+        'PORT': config('PORT_DATABASE', cast = int)
     }
 }
 
